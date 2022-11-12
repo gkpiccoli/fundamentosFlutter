@@ -1,66 +1,58 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MaterialApp(
+      home: WidgetComEstado(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class WidgetComEstado extends StatefulWidget {
+  const WidgetComEstado({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+  // ignore: library_private_types_in_public_api
+  _WidgetComEstadoState createState() {
+    return _WidgetComEstadoState();
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class _WidgetComEstadoState extends State<WidgetComEstado> {
+  var _tamanho = 32.0;
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
+  void _aumentar() {
     setState(() {
-      _counter++;
+      _tamanho = _tamanho + 16;
+    });
+  }
+
+  void _diminuir() {
+    setState(() {
+      _tamanho = _tamanho - 16;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      body: Column(
+        children: <Widget>[
+          FlutterLogo(size: _tamanho),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              FloatingActionButton(
+                onPressed: _aumentar,
+                child: const Icon(Icons.add),
+              ),
+              FloatingActionButton(
+                onPressed: _diminuir,
+                child: const Icon(Icons.remove),
+              )
+            ],
+          ),
+        ],
       ),
     );
   }
