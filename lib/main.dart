@@ -3,10 +3,21 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: WidgetComEstado(),
     ),
   );
 }
+
+class MeuWidgetImutavel extends StatelessWidget {
+  const MeuWidgetImutavel({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text('Eu não terei meu estado alterado');
+  }
+}
+
 // stateful
 class WidgetComEstado extends StatefulWidget {
   const WidgetComEstado({super.key});
@@ -43,10 +54,12 @@ class _WidgetComEstadoState extends State<WidgetComEstado> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               FloatingActionButton(
+                backgroundColor: Colors.green,
                 onPressed: _aumentar,
                 child: const Icon(Icons.add),
               ),
               FloatingActionButton(
+                backgroundColor: Colors.red,
                 onPressed: _diminuir,
                 child: const Icon(Icons.remove),
               )
