@@ -2,7 +2,8 @@
 
 Jornada de aprendizado do framework Flutter
 
-- [] Statefull x Staless Widgets
+- [x] Diferença entre Statefull e Staless Widgets;
+- [ ] 
 
 ## Getting Started
 
