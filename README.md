@@ -1,6 +1,8 @@
-# flutter_widgets
+# Fundamentos do Flutter
 
-A new Flutter project.
+Jornada de aprendizado do framework Flutter
+
+- [] Statefull x Staless Widgets
 
 ## Getting Started
 
