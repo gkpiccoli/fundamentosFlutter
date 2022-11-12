@@ -7,7 +7,7 @@ void main() {
     ),
   );
 }
-
+// stateful
 class WidgetComEstado extends StatefulWidget {
   const WidgetComEstado({super.key});
 
@@ -19,17 +19,17 @@ class WidgetComEstado extends StatefulWidget {
 }
 
 class _WidgetComEstadoState extends State<WidgetComEstado> {
-  var _tamanho = 32.0;
+  var _tamanho = 12.0;
 
   void _aumentar() {
     setState(() {
-      _tamanho = _tamanho + 16;
+      _tamanho = _tamanho + 14;
     });
   }
 
   void _diminuir() {
     setState(() {
-      _tamanho = _tamanho - 16;
+      _tamanho = _tamanho - 14;
     });
   }
 
