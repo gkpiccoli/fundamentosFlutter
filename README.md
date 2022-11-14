@@ -3,7 +3,8 @@
 Jornada de aprendizado do framework Flutter
 
 - [x] Diferença entre Statefull e Staless Widgets;
-- [ ] 
+- [ ] Row, Column, Material, Scaffold
+
 
 ## Getting Started
 
